@@ -26,8 +26,8 @@ export const playGame = (conditions, questionGenerator) => () => {
     const playRound = (round, correctAnswer = false) => {
         if (!round) { return printWinGame(playerName) }
         if (correctAnswer) { printCorrect() }
-        const [num, correctAns] = questionGenerator();
-        printQuestion(num);
+        const [question, correctAns] = questionGenerator();
+        printQuestion(question);
         const userAns = getAnswer();
         return (
             userAns === correctAns ?
