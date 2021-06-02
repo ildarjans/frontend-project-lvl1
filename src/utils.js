@@ -4,3 +4,4 @@ export const randomInt = (max= 1000, min = 0) => (
 
 export const randomElement = (arr) => arr[randomInt(arr.length - 1)];
 
+export const last = (arr) => arr[arr.length - 1];
