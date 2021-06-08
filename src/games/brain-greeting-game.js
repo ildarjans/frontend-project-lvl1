@@ -6,7 +6,7 @@ const printWelcome = () => console.log(`Welcome to the Brain Games!`);
 
 const greeting = (name) => {
     console.log(`Hello, ${name}!`);
-    return name
+    return name;
 };
 
 export default () => greeting(askPlayerName(printWelcome()));
