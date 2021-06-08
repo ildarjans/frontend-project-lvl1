@@ -8,7 +8,7 @@ const printCorrect = () => console.log(`Correct!`);
 const printConditions = (condition) => console.log(condition);
 const printQuestion = (question) => console.log(`Question: ${question}`);
 const printWrongAnswer = (correct, wrong) => (
-    console.log(`${wrong} is wrong answer ;(. Correct answer was ${correct}.`)
+    console.log(`'${wrong}' is wrong answer ;(. Correct answer was '${correct}'.`)
 )
 
 const printGameOver = (name, correct, wrong) => {
