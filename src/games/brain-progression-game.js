@@ -21,7 +21,7 @@ const getQuestionAnswerPair = () => {
         acc
     );
     const progression = genProgression([randomInt(MAX_INITIAL_VALUE)], 0);
-    const answer = progression.splice(randomInt(PROGRESSION_LEN - 1, 1), 1, '...');
+    const answer = progression.splice(randomInt(PROGRESSION_LEN - 1, 1), 1, '..');
     return [progression.join(' '), `${answer}`];
 }
 
