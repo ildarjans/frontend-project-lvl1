@@ -4,9 +4,10 @@ import {
 } from '../utils.js';
 
 const TASK_CONDITION = 'What number is missing in the progression?';
-const PROGRESSION_LEN = 10;
+const MAX_PROGRESSION_LEN = 10;
+const MIN_PROGRESSION_LEN = 5;
 const MAX_INITIAL_VALUE = 100;
-
+const MIN_INITIAL_VALUE = 1;
 const progressions = [
   (a) => a + 1,
   (a) => a + 3,
@@ -17,13 +18,14 @@ const progressions = [
 
 const getQuestionAnswerPair = () => {
   const fn = randomElement(progressions);
+  const progressionLen = randomInt(MAX_PROGRESSION_LEN, MIN_PROGRESSION_LEN);
   const genProgression = (acc, count) => (
-    count < PROGRESSION_LEN
+    count < progressionLen
       ? genProgression([...acc, fn(last(acc))], inc(count))
       : acc
   );
-  const progression = genProgression([randomInt(MAX_INITIAL_VALUE)], 0);
-  const answer = progression.splice(randomInt(PROGRESSION_LEN - 1, 1), 1, '..');
+  const progression = genProgression([randomInt(MAX_INITIAL_VALUE, MIN_INITIAL_VALUE)], 0);
+  const answer = progression.splice(randomInt(progressionLen - 1), 1, '..');
   return [progression.join(' '), `${answer}`];
 };
 
