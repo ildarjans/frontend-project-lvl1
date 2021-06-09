@@ -5,8 +5,8 @@
   "description": "[![Actions Status](https://github.com/ildarjans/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/ildarjans/frontend-project-lvl1/actions)",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./bin",
-    "lint:fix": "eslint ./bin --fix"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "bin": {
     "brain-games": "bin/brain-games.js",
