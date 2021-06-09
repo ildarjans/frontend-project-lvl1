@@ -1,1 +1,5 @@
-export const GAME_ROUND = 3;
+const GAME_ROUND = 3;
+
+export default {
+  GAME_ROUND,
+};

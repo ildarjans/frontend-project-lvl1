@@ -1,7 +1,5 @@
-import { playGame } from '../common.js';
-import {
-  randomElement, randomInt, last, inc,
-} from '../utils.js';
+import playGame from '../common.js';
+import util from '../utils.js';
 
 const TASK_CONDITION = 'What number is missing in the progression?';
 const MAX_PROGRESSION_LEN = 10;
@@ -18,15 +16,15 @@ const progressions = [
 ];
 
 const getQuestionAnswerPair = () => {
-  const fn = randomElement(progressions);
-  const progressionLen = randomInt(MAX_PROGRESSION_LEN, MIN_PROGRESSION_LEN);
+  const fn = util.randomElement(progressions);
+  const progressionLen = util.randomInt(MAX_PROGRESSION_LEN, MIN_PROGRESSION_LEN);
   const genProgression = (acc, count) => (
     count < progressionLen
-      ? genProgression([...acc, fn(last(acc))], inc(count))
+      ? genProgression([...acc, fn(util.last(acc))], util.inc(count))
       : acc
   );
-  const progression = genProgression([randomInt(MAX_INITIAL_VALUE, MIN_INITIAL_VALUE)], 0);
-  const answer = progression.splice(randomInt(progressionLen - 1), 1, '..');
+  const progression = genProgression([util.randomInt(MAX_INITIAL_VALUE, MIN_INITIAL_VALUE)], 0);
+  const answer = progression.splice(util.randomInt(progressionLen - 1), 1, '..');
   return [progression.join(' '), `${answer}`];
 };
 

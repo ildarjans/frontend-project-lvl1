@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import greetPlayer from './games/brain-greeting-game.js';
-import { GAME_ROUND } from './const.js';
-import { dec } from './utils.js';
+import Settings from './const.js';
+import util from './utils.js';
 
 const printWinGame = (name) => console.log(`Congratulations, ${name}!`);
 const printLoseGame = (name) => console.log(`Let's try again, ${name}!`);
@@ -19,7 +19,7 @@ const printGameOver = (name, correct, wrong) => {
 
 const getAnswer = () => readlineSync.question('Your answer: ').trim().toLowerCase();
 
-export const playGame = (conditions, questionGenerator) => () => {
+export default (conditions, questionGenerator) => () => {
   const playerName = greetPlayer();
 
   printConditions(conditions);
@@ -32,10 +32,10 @@ export const playGame = (conditions, questionGenerator) => () => {
     const userAns = getAnswer();
     return (
       userAns === correctAns
-        ? playRound(dec(round), true)
+        ? playRound(util.dec(round), true)
         : printGameOver(playerName, correctAns, userAns)
     );
   };
 
-  return playRound(GAME_ROUND);
+  return playRound(Settings.GAME_ROUND);
 };

@@ -1,5 +1,5 @@
-import { playGame } from '../common.js';
-import { randomInt } from '../utils.js';
+import playGame from '../common.js';
+import util from '../utils.js';
 
 const TASK_CONDITION = '"yes" if the number is even, otherwise answer "no"';
 
@@ -9,7 +9,7 @@ const PlayerAnswer = {
 };
 
 const getQuestionAnswerPair = () => {
-  const num = randomInt();
+  const num = util.randomInt();
   return [num, num % 2 ? PlayerAnswer.no : PlayerAnswer.yes];
 };
 
