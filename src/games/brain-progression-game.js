@@ -2,21 +2,21 @@ import playGame from '../common.js';
 import util from '../utils.js';
 
 const TASK_CONDITION = 'What number is missing in the progression?';
+
 const MAX_PROGRESSION_LEN = 10;
 const MIN_PROGRESSION_LEN = 5;
 const MAX_INITIAL_VALUE = 100;
 const MIN_INITIAL_VALUE = 1;
-const progressions = [
-  (a) => a + 1,
-  (a) => a + 3,
-  (a) => a + 5,
-  (a) => a + 13,
-  (a) => a * 2,
-  (a) => a * 3,
-];
+const MIN_DEVIATION = 1;
+const MAX_DEVIATION = 100;
+
+const getProgression = () => {
+  const n = util.randomInt(MIN_DEVIATION, MAX_DEVIATION);
+  return (a) => a + n;
+};
 
 const getQuestionAnswerPair = () => {
-  const fn = util.randomElement(progressions);
+  const fn = getProgression();
   const progressionLen = util.randomInt(MAX_PROGRESSION_LEN, MIN_PROGRESSION_LEN);
   const genProgression = (acc, count) => (
     count < progressionLen
