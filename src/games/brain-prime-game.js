@@ -12,7 +12,7 @@ const PlayerAnswer = {
 const isPrime = (n) => {
   const iter = (x) => {
     if (n % x === 0) { return false; }
-    return x * x <= n ? util.iter(util.inc(x)) : true;
+    return x * x <= n ? iter(util.inc(x)) : true;
   };
   return n <= 2 ? true : iter(2);
 };
