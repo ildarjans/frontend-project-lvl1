@@ -12,8 +12,9 @@ const progressions = [
   (a) => a + 1,
   (a) => a + 3,
   (a) => a + 5,
-  (a) => a * 2 - 2,
-  (a) => a * 3 - 3,
+  (a) => a + 13,
+  (a) => a * 2,
+  (a) => a * 3,
 ];
 
 const getQuestionAnswerPair = () => {
