@@ -1,7 +1,6 @@
-import playGame from '../common.js';
+import playGame from '../play-game.js';
 import util from '../utils.js';
-
-const TASK_CONDITION = 'What number is missing in the progression?';
+import GameConditions from '../game-conditions.js';
 
 const MAX_PROGRESSION_LEN = 10;
 const MIN_PROGRESSION_LEN = 5;
@@ -28,4 +27,4 @@ const getQuestionAnswerPair = () => {
   return [progression.join(' '), `${answer}`];
 };
 
-export default playGame(TASK_CONDITION, getQuestionAnswerPair);
+export default playGame(GameConditions.progression, getQuestionAnswerPair);

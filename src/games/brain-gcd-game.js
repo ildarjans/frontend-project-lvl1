@@ -1,7 +1,6 @@
-import playGame from '../common.js';
+import playGame from '../play-game.js';
 import util from '../utils.js';
-
-const TASK_CONDITION = 'Find the greatest common divisor of given numbers.';
+import GameConditions from '../game-conditions.js';
 
 const MAX_GCD_NUM = 100;
 const MIN_GCD_NUM = 1;
@@ -14,4 +13,4 @@ const getQuestionAnswerPair = () => {
   return [`${a} ${b}`, `${gcd(a, b)}`];
 };
 
-export default playGame(TASK_CONDITION, getQuestionAnswerPair);
+export default playGame(GameConditions.gcd, getQuestionAnswerPair);

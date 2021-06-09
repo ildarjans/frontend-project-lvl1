@@ -1,7 +1,7 @@
-import playGame from '../common.js';
+import playGame from '../play-game.js';
 import util from '../utils.js';
+import GameConditions from '../game-conditions.js';
 
-const TASK_CONDITION = '"yes" if given number is prime. Otherwise answer "no"';
 const MAX_NUMBER = 1000;
 
 const PlayerAnswer = {
@@ -21,4 +21,4 @@ const getQuestionAnswerPair = () => {
   return [`${num}`, isPrime(num) ? PlayerAnswer.yes : PlayerAnswer.no];
 };
 
-export default playGame(TASK_CONDITION, getQuestionAnswerPair);
+export default playGame(GameConditions.prime, getQuestionAnswerPair);

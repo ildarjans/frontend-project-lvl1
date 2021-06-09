@@ -1,7 +1,6 @@
-import playGame from '../common.js';
+import playGame from '../play-game.js';
 import util from '../utils.js';
-
-const TASK_CONDITION = '"yes" if the number is even, otherwise answer "no"';
+import GameConditions from '../game-conditions.js';
 
 const PlayerAnswer = {
   yes: 'yes',
@@ -13,4 +12,4 @@ const getQuestionAnswerPair = () => {
   return [num, num % 2 ? PlayerAnswer.no : PlayerAnswer.yes];
 };
 
-export default playGame(TASK_CONDITION, getQuestionAnswerPair);
+export default playGame(GameConditions.even, getQuestionAnswerPair);

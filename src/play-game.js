@@ -1,7 +1,8 @@
 import readlineSync from 'readline-sync';
 import greetPlayer from './games/brain-greeting-game.js';
-import Settings from './const.js';
 import util from './utils.js';
+
+const GAME_ROUND = 3;
 
 const printWinGame = (name) => console.log(`Congratulations, ${name}!`);
 const printLoseGame = (name) => console.log(`Let's try again, ${name}!`);
@@ -37,5 +38,5 @@ export default (conditions, questionGenerator) => () => {
     );
   };
 
-  return playRound(Settings.GAME_ROUND);
+  return playRound(GAME_ROUND);
 };
